@@ -5,10 +5,9 @@ import (
 )
 
 func main() {
-	var test Solution
+	test := Solution{}
 	arr := []int{1, 2, 3, 3, 4, 5}
 
-	test.containsDuplicate(arr)
 	fmt.Println(test.containsDuplicate(arr))
 }
 
@@ -16,13 +15,13 @@ type Solution struct{}
 
 // containsDuplicate checks for duplicates in a slice of integers
 func (s *Solution) containsDuplicate(nums []int) bool {
-	var seen map[int]bool
+	seen := make(map[int]struct{})
 
 	for _, num := range nums {
 		if _, exists := seen[num]; exists {
 			return true
 		}
-		seen[num] = true
+		seen[num] = struct{}{}
 	}
 	return false
 }
