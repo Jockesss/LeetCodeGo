@@ -15,13 +15,13 @@ type Solution struct{}
 
 // containsDuplicate checks for duplicates in a slice of integers
 func (s *Solution) containsDuplicate(nums []int) bool {
-	seen := make(map[int]struct{})
+	seen := make(map[int]bool)
 
 	for _, num := range nums {
 		if _, exists := seen[num]; exists {
 			return true
 		}
-		seen[num] = struct{}{}
+		seen[num] = true
 	}
 	return false
 }
