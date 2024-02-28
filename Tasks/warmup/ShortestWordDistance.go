@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 func main() {
 	var words = []string{"the", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog"}
@@ -12,19 +15,31 @@ func main() {
 }
 
 func shortestDistance(arr []string, s1 string, s2 string) int {
-	var res int
-	word1 := 0
-	word2 := 0
+	word1 := -1
+	word2 := -1
+	minDist := math.MaxInt
 
 	for i := 0; i < len(arr); i++ {
 		if s1 == arr[i] {
 			word1 = i
-		}
-		if s2 == arr[i] {
+		} else if s2 == arr[i] {
 			word2 = i
+		}
+
+		if word1 != -1 && word2 != -1 {
+			dist := abs(word2 - word1)
+			if dist < minDist {
+				minDist = dist
+			}
 		}
 	}
 
-	res = word2 - word1
-	return res
+	return minDist
+}
+
+func abs(x int) int {
+	if x < 0 {
+		return -x
+	}
+	return x
 }
