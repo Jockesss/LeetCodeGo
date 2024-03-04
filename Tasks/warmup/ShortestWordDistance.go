@@ -1,3 +1,10 @@
+/*
+Given an array of strings words and two different strings that already exist in the array word1 and word2,
+return the shortest distance between these two words in the list.
+
+Учитывая массив строк words и две разные строки, которые уже существуют в массиве word1 и word2,
+верните кратчайшее расстояние между этими двумя словами в списке.
+*/
 package main
 
 import (
