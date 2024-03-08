@@ -21,7 +21,7 @@ import "fmt"
 
 func main() {
 	arr := []int{2, 3, 3, 3, 6, 9, 9}
-	fmt.Println(arr)
+	fmt.Println(remove(arr))
 }
 
 func remove(arr []int) int {
@@ -34,7 +34,7 @@ func remove(arr []int) int {
 		if _, ok := m[arr[i]]; ok {
 			count++
 		}
-
+		m[arr[i]] = true
 	}
 
 	return count
