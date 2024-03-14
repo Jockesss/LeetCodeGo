@@ -21,20 +21,21 @@ import "fmt"
 
 func main() {
 	arr := []int{2, 3, 3, 3, 6, 9, 9}
-	fmt.Println(remove(arr))
+	fmt.Println(removeDuplicates(arr))
 }
 
-func remove(arr []int) int {
-	m := make(map[int]bool)
-	count := 0
-	//start := 0
-	//end := len(arr) - 1
+func removeDuplicates(nums []int) int {
+	if len(nums) == 0 {
+		return 0
+	}
 
-	for i := 0; i < len(arr); i++ {
-		if _, ok := m[arr[i]]; ok {
+	count := 1
+
+	for i := 1; i < len(nums); i++ {
+		if nums[i] != nums[i-1] {
+			nums[count] = nums[i]
 			count++
 		}
-		m[arr[i]] = true
 	}
 
 	return count
