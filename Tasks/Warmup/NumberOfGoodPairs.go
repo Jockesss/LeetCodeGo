@@ -1,6 +1,8 @@
 /*
-	Учитывая массив целых чисел nums, верните количество хороших пар.
+	Given an array of integers nums, return the number of good pairs.
+    A pair (i, j) is called good if nums[i] == nums[j] and i < j.
 
+	Учитывая массив целых чисел nums, верните количество хороших пар.
     Пара (i, j) называется хорошей, если nums[i] == nums[j] и i < j.
 */
 
