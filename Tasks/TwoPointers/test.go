@@ -6,7 +6,7 @@ import (
 
 func main() {
 	v := "Hello world"
-	for _, j := range v {
-		fmt.Println(j)
+	for i, j := range v {
+		fmt.Println(i, j)
 	}
 }
